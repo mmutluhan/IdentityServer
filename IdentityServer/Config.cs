@@ -20,9 +20,9 @@ namespace IdentityServer
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource>
-            {  
-                new ApiResource("merada.blog.api", "merada.blog.api"),
-                new ApiResource("merada.shopping.api", "merada.shopping.api")
+            {
+                new("merada.blog.api", "merada.blog.api"),
+                new("merada.shopping.api", "merada.shopping.api")
             };
         }
 
@@ -32,7 +32,7 @@ namespace IdentityServer
             // client credentials client
             return new List<Client>
             {
-                new Client
+                new()
                 {
                     ClientId = "merada.shopping.web",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
@@ -41,9 +41,9 @@ namespace IdentityServer
                     {
                         new Secret("secret-web".Sha256())
                     },
-                    AllowedScopes = { "merada.shopping.web", IdentityServerConstants.StandardScopes.OfflineAccess },
+                    AllowedScopes = {"merada.shopping.web", IdentityServerConstants.StandardScopes.OfflineAccess}
                 },
-                new Client
+                new()
                 {
                     ClientId = "merada.shopping.mobile",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
@@ -52,9 +52,9 @@ namespace IdentityServer
                     {
                         new Secret("secret-mobile".Sha256())
                     },
-                    AllowedScopes = { "merada.shopping.mobile", IdentityServerConstants.StandardScopes.OfflineAccess },
+                    AllowedScopes = {"merada.shopping.mobile", IdentityServerConstants.StandardScopes.OfflineAccess}
                 },
-                new Client
+                new()
                 {
                     ClientId = "merada.shopping.api",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
@@ -63,7 +63,7 @@ namespace IdentityServer
                     {
                         new Secret("secret-shopping".Sha256())
                     },
-                    AllowedScopes = { "merada.shopping.api", IdentityServerConstants.StandardScopes.OfflineAccess },
+                    AllowedScopes = {"merada.shopping.api", IdentityServerConstants.StandardScopes.OfflineAccess}
                 }
             };
         }

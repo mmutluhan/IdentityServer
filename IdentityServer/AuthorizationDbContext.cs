@@ -13,12 +13,11 @@ namespace IdentityServer
             
              */
         }
-        
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.HasDefaultSchema("merada_auth_db");
             base.OnModelCreating(builder);
         }
-        
     }
 }
